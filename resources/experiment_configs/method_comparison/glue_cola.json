@@ -1,0 +1,50 @@
+{
+    "experiment": {
+        "name": "glue_cola",
+        "datasetPath": "resources/datasets/glue/cola",
+        "partitionMethod": "random",
+        "numSamples": 800,
+        "budget": 800,
+        "iterations": 1000,
+        "uniqueIndices": true,
+        "fitOracleSize": false,
+        "parallel": true
+        },
+    "methods": [
+        {
+            "name": "Model Picker epsilon=0.41",
+            "type": "model_picker",
+            "epsilon": 0.41
+        },
+        {
+            "name": "Random",
+            "type": "random"
+        },
+        {
+            "name": "QBC Entropy",
+            "type": "qbc",
+            "qbcStrategy": "entropy"
+        },
+        {
+            "name": "QBC Margin",
+            "type": "qbc",
+            "qbcStrategy": "vote_margin"
+        },
+        {
+            "name": "AMC", 
+            "type": "amc"
+        },
+        {
+            "name": "VMA", 
+            "type": "vma"
+        },
+        {
+            "name": "AMC", 
+            "type": "amc"
+        },
+        {
+            "name": "VMA", 
+            "type": "vma"
+        }
+    ]
+}

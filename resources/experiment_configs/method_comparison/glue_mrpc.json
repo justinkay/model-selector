@@ -1,0 +1,42 @@
+{
+    "experiment": {
+        "name": "glue_mrpc",
+        "datasetPath": "resources/datasets/glue/mrpc",
+        "partitionMethod": "random",
+        "numSamples": 350,
+        "budget": 350,
+        "iterations": 1000,
+        "uniqueIndices": false,
+        "fitOracleSize": false,
+        "parallel": true
+        },
+    "methods": [
+        {
+            "name": "Model Picker epsilon=0.37",
+            "type": "model_picker",
+            "epsilon": 0.37
+        },
+        {
+            "name": "Random",
+            "type": "random"
+        },
+        {
+            "name": "QBC Entropy",
+            "type": "qbc",
+            "qbcStrategy": "entropy"
+        },
+        {
+            "name": "QBC Margin",
+            "type": "qbc",
+            "qbcStrategy": "vote_margin"
+        },
+        {
+            "name": "AMC", 
+            "type": "amc"
+        },
+        {
+            "name": "VMA", 
+            "type": "vma"
+        }
+    ]
+}

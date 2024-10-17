@@ -1,0 +1,28 @@
+{
+    "experiment": {
+        "name": "gridsearch_domain_drift_vote_finegrained",
+        "datasetPath": "resources/datasets/domain_drift",
+        "partitionMethod": "random",
+        "numSamples": 750,
+        "budget": 750,
+        "iterations": 1000,
+        "uniqueIndices": false,
+        "fitOracleSize": false,
+        "parallel": true
+    },
+    "epsilon_range": {
+        "min": 0.35,
+        "max": 0.50,
+        "step": 0.01
+    },
+    "epsilon_metric": "all",
+    "epsilon_metric_threshold": 0.9,
+    "noisy_oracle": "vote",
+    "methods": [
+        {
+            "name": "Model Picker",
+            "type": "model_picker",
+            "epsilon": 0.49
+        }
+    ]
+}

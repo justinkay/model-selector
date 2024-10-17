@@ -1,0 +1,42 @@
+{
+    "experiment": {
+        "name": "imagenet_v2_matched-frequency",
+        "datasetPath": "resources/datasets/imagenet_v2_matched-frequency",
+        "partitionMethod": "random",
+        "numSamples": 1000,
+        "budget": 1000,
+        "iterations": 1000,
+        "uniqueIndices": false,
+        "fitOracleSize": false,
+        "parallel": true
+    },
+    "methods": [
+        {
+            "name": "Model Picker epsilon=0.46",
+            "type": "model_picker",
+            "epsilon": 0.46
+        },
+        {
+            "name": "Random",
+            "type": "random"
+        },
+        {
+            "name": "QBC Entropy",
+            "type": "qbc",
+            "qbcStrategy": "entropy"
+        },
+        {
+            "name": "QBC Margin",
+            "type": "qbc",
+            "qbcStrategy": "vote_margin"
+        },
+        {
+            "name": "AMC", 
+            "type": "amc"
+        },
+        {
+            "name": "VMA", 
+            "type": "vma"
+        }
+    ]
+}

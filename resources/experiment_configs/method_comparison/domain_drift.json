@@ -1,0 +1,44 @@
+{
+    "experiment": {
+        "name": "domain_drift",
+        "datasetPath": "resources/datasets/domain_drift",
+        "partitionMethod": "random",
+        "numSamples": 750,
+        "budget": 750,
+        "iterations": 1000,
+        "uniqueIndices": false,
+        "fitOracleSize": false,
+        "parallel": true
+    },
+    "methods": [
+        {
+            "name": "Random",
+            "type": "random"
+        },
+        
+        {
+            "name": "QBC Entropy",
+            "type": "qbc",
+            "qbcStrategy": "entropy"
+        },
+        {
+            "name": "QBC Margin",
+            "type": "qbc",
+            "qbcStrategy": "vote_margin"
+        },
+        {
+            "name": "Model Picker epsilon=0.50",
+            "type": "model_picker",
+            "epsilon": 0.50
+        },
+        {
+            "name": "AMC", 
+            "type": "amc"
+        },
+        {
+            "name": "VMA", 
+            "type": "vma"
+        }
+        
+    ]
+}

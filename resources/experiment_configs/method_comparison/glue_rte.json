@@ -1,0 +1,42 @@
+{
+    "experiment": {
+        "name": "glue_rte",
+        "datasetPath": "resources/datasets/glue/rte",
+        "partitionMethod": "random",
+        "numSamples": 250,
+        "budget": 250,
+        "iterations": 1000,
+        "uniqueIndices": false,
+        "fitOracleSize": false,
+        "parallel": true
+        },
+    "methods": [
+        {
+            "name": "Model Picker epsilon=0.39",
+            "type": "model_picker",
+            "epsilon": 0.39
+        },
+        {
+            "name": "Random",
+            "type": "random"
+        },
+        {
+            "name": "QBC Entropy",
+            "type": "qbc",
+            "qbcStrategy": "entropy"
+        },
+        {
+            "name": "QBC Margin",
+            "type": "qbc",
+            "qbcStrategy": "vote_margin"
+        },
+        {
+            "name": "AMC", 
+            "type": "amc"
+        },
+        {
+            "name": "VMA", 
+            "type": "vma"
+        }
+    ]
+}
