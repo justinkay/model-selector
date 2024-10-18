@@ -1,4 +1,4 @@
-# All models are wrong, some are useful: Model Selection with Limited Labels ([PDF](link))
+# All models are wrong, some are useful: Model Selection with Limited Labels ([PDF](https://arxiv.org/pdf/2410.13609))
 
 ![Model Selector](resources/overview.png)
 
